@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Rent a Car Liriki</title>
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../../index.html">
+                    <i class="fas fa-car"></i>
+                    <span>Rent a Car Liriki - Admin</span>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="../../index.html" class="nav-link">Back to Website</a>
+                </li>
+                <!-- Logout button will be added here by JavaScript -->
+                <li class="nav-item">
+                    <a href="#users" class="nav-link">Users</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#bookings" class="nav-link">Bookings</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#stats" class="nav-link">Statistics</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Admin Dashboard -->
+    <section class="admin-section">
+        <div class="container">
+            <div class="admin-header">
+                <h1>Admin Dashboard</h1>
+                <p>Manage users, bookings, and view statistics</p>
+            </div>
+
+            <!-- Statistics Cards -->
+            <div class="stats-cards" id="stats">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="totalUsers">0</h3>
+                        <p>Total Users</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="totalBookings">0</h3>
+                        <p>Total Bookings</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="activeBookings">0</h3>
+                        <p>Active Bookings</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="revenue">€0</h3>
+                        <p>Total Revenue</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Users Section -->
+            <div class="admin-section-content" id="users">
+                <div class="section-header">
+                    <h2>All Users</h2>
+                    <div class="search-box">
+                        <input type="text" id="userSearch" placeholder="Search users...">
+                        <i class="fas fa-search"></i>
+                    </div>
+                </div>
+                <div class="users-table-container">
+                    <table class="users-table">
+                        <thead>
+                            <tr>
+                                <th>Profile</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Address</th>
+                                <th>License</th>
+                                <th>Joined</th>
+                                <th>Bookings</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="usersTableBody">
+                            <!-- Users will be populated here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Bookings Section -->
+            <div class="admin-section-content" id="bookings">
+                <div class="section-header">
+                    <h2>All Bookings</h2>
+                    <div class="search-box">
+                        <input type="text" id="bookingSearch" placeholder="Search bookings...">
+                        <i class="fas fa-search"></i>
+                    </div>
+                </div>
+                <div class="bookings-table-container">
+                    <table class="bookings-table">
+                        <thead>
+                            <tr>
+                                <th>Customer</th>
+                                <th>Car</th>
+                                <th>Pickup Date</th>
+                                <th>Return Date</th>
+                                <th>Location</th>
+                                <th>Status</th>
+                                <th>Total Price</th>
+                                <th>Created</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="bookingsTableBody">
+                            <!-- Bookings will be populated here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- User Detail Modal -->
+    <div id="userDetailModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('userDetailModal')">&times;</span>
+            <div class="modal-header">
+                <h2>User Details</h2>
+                <p>Complete user information</p>
+            </div>
+            <div class="user-detail-content" id="userDetailContent">
+                <!-- User details will be populated here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Booking Detail Modal -->
+    <div id="bookingDetailModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('bookingDetailModal')">&times;</span>
+            <div class="modal-header">
+                <h2>Booking Details</h2>
+                <p>Complete booking information</p>
+            </div>
+            <div class="booking-detail-content" id="bookingDetailContent">
+                <!-- Booking details will be populated here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="../../assets/js/admin/admin.js" defer></script>
+</body>
+</html> 
